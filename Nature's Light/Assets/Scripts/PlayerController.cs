@@ -24,22 +24,22 @@ public class PlayerController : MonoBehaviour {
         animator.SetBool("IsRunningUp", false);
         animator.SetBool("IsRunningDown", false);
 
-        if (Input.GetKey("up"))
+        if (Input.GetKey("up") || Input.GetKey("w"))
         {
             transform.Translate(0, playerSpeed * Time.deltaTime, 0);
             animator.SetBool("IsRunningUp", true);
         }
-        if (Input.GetKey("down"))
+        if (Input.GetKey("down") || Input.GetKey("s"))
         {
             transform.Translate(0, -playerSpeed * Time.deltaTime, 0);
             animator.SetBool("IsRunningDown", true);
         }
-        if (Input.GetKey("left"))
+        if (Input.GetKey("left") || Input.GetKey("a"))
         {
             transform.Translate(-playerSpeed * Time.deltaTime, 0, 0);
             animator.SetBool("IsRunningLeft", true);
         }
-        if (Input.GetKey("right"))
+        if (Input.GetKey("right") || Input.GetKey("d"))
         {
             transform.Translate(playerSpeed * Time.deltaTime, 0, 0);
             animator.SetBool("IsRunningRight", true);
