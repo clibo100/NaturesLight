@@ -20,10 +20,10 @@ public class CollectFirefly : MonoBehaviour {
     {
         if (collision.tag == "Player")
         {
-            lt.range = lt.range + 2;
+            lt.range = lt.range + 3;
             if (lt.intensity <= (float)1.0)
             {
-                lt.intensity += (float)0.1;
+                lt.intensity += (float)0.3;
             }
             Destroy(gameObject);
         }
