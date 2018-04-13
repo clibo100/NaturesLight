@@ -6,7 +6,6 @@ public class CollectFirefly : MonoBehaviour {
     public float speed = 5f;
     public float height = 0.5f;
     public Light lt;
-    private double intensityMod = 0.1;
 
     // Use this for initialization
     void Start () {
