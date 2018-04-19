@@ -4,50 +4,67 @@ using UnityEngine;
 
 public class PushBlock : MonoBehaviour {
 
-    public int playerSpeed;
-    private bool isPushed;
+    public int speed;
+    private bool pushedRight;
+    private bool pushedLeft;
+    private bool pushedUp;
+    private bool pushedDown;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        if(isPushed)
+    void Update ()
+    {
+        if ((Input.GetKey("up") || Input.GetKey("w")) && pushedUp)
         {
-            if (Input.GetKey("up") || Input.GetKey("w"))
-            {
-                transform.Translate(0, playerSpeed * Time.deltaTime, 0);
-            }
-            if (Input.GetKey("down") || Input.GetKey("s"))
-            {
-                transform.Translate(0, -playerSpeed * Time.deltaTime, 0);
-            }
-            if (Input.GetKey("left") || Input.GetKey("a"))
-            {
-                transform.Translate(-playerSpeed * Time.deltaTime, 0, 0);
-            }
-            if (Input.GetKey("right") || Input.GetKey("d"))
-            {
-                transform.Translate(playerSpeed * Time.deltaTime, 0, 0);
-            }
+            transform.Translate(0, 1, 0);
         }
+        if ((Input.GetKey("down") || Input.GetKey("s")) && pushedDown)
+        {
+            transform.Translate(0, -1, 0);
+        }
+        if ((Input.GetKey("left") || Input.GetKey("a")) && pushedLeft)
+        {
+            transform.Translate(-1, 0, 0);
+        }
+        if ((Input.GetKey("right") || Input.GetKey("d")) && pushedRight)
+        {
+            transform.Translate(1, 0, 0);
+        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            isPushed = true;
+            if (Input.GetKey("up") || Input.GetKey("w"))
+            {
+                pushedUp = true;
+            }
+            if (Input.GetKey("down") || Input.GetKey("s"))
+            {
+                pushedDown = true;
+            }
+            if (Input.GetKey("left") || Input.GetKey("a"))
+            {
+                pushedLeft = true;
+            }
+            if (Input.GetKey("right") || Input.GetKey("d"))
+            {
+                pushedRight = true;
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
-        {
-            isPushed = false;
-        }
+        pushedRight = false;
+        pushedLeft = false;
+        pushedUp = false;
+        pushedDown = false;
     }
 }

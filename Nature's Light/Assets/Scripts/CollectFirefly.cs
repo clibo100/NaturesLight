@@ -20,7 +20,7 @@ public class CollectFirefly : MonoBehaviour {
         if (collision.tag == "Player")
         {
             lt.range = lt.range + 3;
-            if (lt.intensity <= (float)1.0)
+            if (lt.intensity <= (float)0.75)
             {
                 lt.intensity += (float)0.3;
             }
