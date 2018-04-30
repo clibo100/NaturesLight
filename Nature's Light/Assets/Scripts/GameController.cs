@@ -28,4 +28,9 @@ public class GameController : MonoBehaviour {
     {
         scoreText.text = "x " + score;
     }
+
+    public int getScore()
+    {
+        return score;
+    }
 }
