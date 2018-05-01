@@ -1,24 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
-public class PlayerController : MonoBehaviour {
+// PlayerScript requires the GameObject to have a Rigidbody2D component
 
+[RequireComponent(typeof(Rigidbody2D))]
+
+public class PlayerController : MonoBehaviour
+{
     Animator animator;
-    public float playerSpeed; //speed player moves
+    public float playerSpeed = 4f;
 
-    private void Start()
+    void Start()
     {
         animator = GetComponent<Animator>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        MoveForward(); // Player Movement 
-    }
+        Vector2 targetVelocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        GetComponent<Rigidbody2D>().velocity = targetVelocity * playerSpeed;
 
-    void MoveForward()
-    {
         animator.SetBool("IsRunningLeft", false);
         animator.SetBool("IsRunningRight", false);
         animator.SetBool("IsRunningUp", false);
@@ -26,22 +27,18 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKey("up") || Input.GetKey("w"))
         {
-            transform.Translate(0, playerSpeed * Time.deltaTime, 0);
             animator.SetBool("IsRunningUp", true);
         }
         if (Input.GetKey("down") || Input.GetKey("s"))
         {
-            transform.Translate(0, -playerSpeed * Time.deltaTime, 0);
             animator.SetBool("IsRunningDown", true);
         }
         if (Input.GetKey("left") || Input.GetKey("a"))
         {
-            transform.Translate(-playerSpeed * Time.deltaTime, 0, 0);
             animator.SetBool("IsRunningLeft", true);
         }
         if (Input.GetKey("right") || Input.GetKey("d"))
         {
-            transform.Translate(playerSpeed * Time.deltaTime, 0, 0);
             animator.SetBool("IsRunningRight", true);
         }
     }
