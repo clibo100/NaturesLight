@@ -9,10 +9,11 @@ public class PushBlock : MonoBehaviour {
     private bool pushedLeft;
     private bool pushedUp;
     private bool pushedDown;
+    private bool canBePushed;
 
     // Use this for initialization
     void Start () {
-		
+        canBePushed = true;
 	}
 	
 	// Update is called once per frame
@@ -39,7 +40,12 @@ public class PushBlock : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Block")
+        {
+            canBePushed = false;
+        }
+
+        if (collision.tag == "Player" && canBePushed)
         {
             if (Input.GetKey("up") || Input.GetKey("w"))
             {
@@ -62,9 +68,15 @@ public class PushBlock : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        
         pushedRight = false;
         pushedLeft = false;
         pushedUp = false;
         pushedDown = false;
+
+        if (collision.tag == "Block")
+        {
+            canBePushed = true;
+        }
     }
 }
