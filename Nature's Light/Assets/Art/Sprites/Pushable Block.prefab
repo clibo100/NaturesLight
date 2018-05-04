@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61102102439884558}
   - component: {fileID: 61642173256864808}
   - component: {fileID: 114564768445379366}
+  - component: {fileID: 50381572572792520}
   m_Layer: 0
   m_Name: Pushable Block
   m_TagString: Untagged
@@ -43,6 +44,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50381572572792520
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1363354255769876}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 10
+  m_LinearDrag: 10
+  m_AngularDrag: 10
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!61 &61102102439884558
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -105,6 +126,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  pushedRight: 0
+  pushedLeft: 0
+  pushedUp: 0
+  pushedDown: 0
+  canBePushed: 0
 --- !u!212 &212911698940310026
 SpriteRenderer:
   m_ObjectHideFlags: 1

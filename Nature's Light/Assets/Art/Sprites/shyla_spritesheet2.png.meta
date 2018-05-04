@@ -160,9 +160,9 @@ TextureImporter:
       name: shyla_spritesheet2_4
       rect:
         serializedVersion: 2
-        x: 388
+        x: 393
         y: 390
-        width: 98
+        width: 93
         height: 195
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
