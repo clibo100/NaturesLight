@@ -1826,7 +1826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 636102784d86abb4f8a1c9f79a7cb514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFireflies: 5
+  maxFireflies: 500
 --- !u!1001 &101298837
 Prefab:
   m_ObjectHideFlags: 0
@@ -9524,6 +9524,7 @@ GameObject:
   - component: {fileID: 806572077}
   - component: {fileID: 806572079}
   - component: {fileID: 806572078}
+  - component: {fileID: 806572082}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -9668,6 +9669,86 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!82 &806572082
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 806572075}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 39decf2aff90d4c28a8aadeeb2333a67, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.21
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1001 &812757752
 Prefab:
   m_ObjectHideFlags: 0
@@ -13432,7 +13513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1064192921
 Light:
   m_ObjectHideFlags: 0
@@ -13751,7 +13832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 636102784d86abb4f8a1c9f79a7cb514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFireflies: 10
+  maxFireflies: 7
 --- !u!4 &1089518422 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4084280436924696, guid: 3d3648201c01ad3418ac9f211b919ea5,
@@ -15244,10 +15325,10 @@ Transform:
   - {fileID: 75018935}
   - {fileID: 1027122633}
   - {fileID: 1033934316}
-  - {fileID: 1316910119}
   - {fileID: 1043396897}
-  - {fileID: 258080553}
+  - {fileID: 1316910119}
   - {fileID: 1288170840}
+  - {fileID: 258080553}
   - {fileID: 1008309493}
   - {fileID: 1385987972}
   - {fileID: 1783969306}
@@ -18880,7 +18961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 636102784d86abb4f8a1c9f79a7cb514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFireflies: 1
+  maxFireflies: 500
 --- !u!4 &1494362859 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4084280436924696, guid: 3d3648201c01ad3418ac9f211b919ea5,
@@ -23552,6 +23633,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b0ac78ad41bc43c4a9238a1af74f59ca, type: 2}
+    - target: {fileID: 114473009067057446, guid: 097171b81dc209449afc8739685c6958,
+        type: 2}
+      propertyPath: maxFireflies
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 097171b81dc209449afc8739685c6958, type: 2}
   m_IsPrefabParent: 0
