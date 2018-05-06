@@ -11,6 +11,8 @@ public class BackButton : MonoBehaviour {
     public GameObject exitButton;
     public GameObject light1;
     public GameObject light2;
+    public GameObject light3;
+    public GameObject light4;
 
     // Use this for initialization
     void Start () {
@@ -31,6 +33,8 @@ public class BackButton : MonoBehaviour {
         exitButton.SetActive(true);
         light1.SetActive(true);
         light2.SetActive(true);
+        light3.SetActive(false);
+        light4.SetActive(false);
         gameObject.SetActive(false);
     }
 }
