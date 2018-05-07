@@ -13,6 +13,7 @@ public class HTPButton : MonoBehaviour {
     public GameObject light2;
     public GameObject light3;
     public GameObject light4;
+    public GameObject particles;
 
     // Use this for initialization
     void Start () {
@@ -35,6 +36,7 @@ public class HTPButton : MonoBehaviour {
         light2.SetActive(false);
         light3.SetActive(true);
         light4.SetActive(true);
+        particles.SetActive(false);
         gameObject.SetActive(false);
 
     }

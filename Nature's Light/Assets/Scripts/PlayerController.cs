@@ -13,33 +13,51 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-    }
 
-    void FixedUpdate()
-    {
-        Vector2 targetVelocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        GetComponent<Rigidbody2D>().velocity = targetVelocity * playerSpeed;
 
         animator.SetBool("IsRunningLeft", false);
         animator.SetBool("IsRunningRight", false);
         animator.SetBool("IsRunningUp", false);
         animator.SetBool("IsRunningDown", false);
+    }
 
-        if (Input.GetKey("up") || Input.GetKey("w"))
+    void Update()
+    {
+        Vector2 targetVelocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        GetComponent<Rigidbody2D>().velocity = targetVelocity * playerSpeed;
+
+        if (Input.GetKeyDown("up") || Input.GetKeyDown("w"))
         {
             animator.SetBool("IsRunningUp", true);
         }
-        if (Input.GetKey("down") || Input.GetKey("s"))
+        if (Input.GetKeyDown("down") || Input.GetKeyDown("s"))
         {
             animator.SetBool("IsRunningDown", true);
         }
-        if (Input.GetKey("left") || Input.GetKey("a"))
+        if (Input.GetKeyDown("left") || Input.GetKeyDown("a"))
         {
             animator.SetBool("IsRunningLeft", true);
         }
-        if (Input.GetKey("right") || Input.GetKey("d"))
+        if (Input.GetKeyDown("right") || Input.GetKeyDown("d"))
         {
             animator.SetBool("IsRunningRight", true);
+        }
+
+        if (Input.GetKeyUp("up") || Input.GetKeyUp("w"))
+        {
+            animator.SetBool("IsRunningUp", false);
+        }
+        if (Input.GetKeyUp("down") || Input.GetKeyUp("s"))
+        {
+            animator.SetBool("IsRunningDown", false);
+        }
+        if (Input.GetKeyUp("left") || Input.GetKeyUp("a"))
+        {
+            animator.SetBool("IsRunningLeft", false);
+        }
+        if (Input.GetKeyUp("right") || Input.GetKeyUp("d"))
+        {
+            animator.SetBool("IsRunningRight", false);
         }
     }
 }

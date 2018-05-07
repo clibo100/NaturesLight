@@ -11,7 +11,7 @@ public class StartButton : MonoBehaviour {
     public GameObject pressEnter;
     public GameObject light1;
     public GameObject light2;
-
+    public GameObject particles;
 
 
     // Use this for initialization
@@ -33,6 +33,7 @@ public class StartButton : MonoBehaviour {
         exit.SetActive(false);
         light1.SetActive(false);
         light2.SetActive(false);
+        particles.SetActive(false);
         gameObject.SetActive(false);
     }
 }
