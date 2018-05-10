@@ -23,7 +23,7 @@ public class OpenGate : MonoBehaviour {
 	void Update () {
         if (gameController.getScore() == maxFireflies)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
 		
 	}
