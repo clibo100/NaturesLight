@@ -13,12 +13,11 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-
-
         animator.SetBool("IsRunningLeft", false);
         animator.SetBool("IsRunningRight", false);
         animator.SetBool("IsRunningUp", false);
         animator.SetBool("IsRunningDown", false);
+        animator.SetBool("IsIdle", true);
     }
 
     void Update()
@@ -58,6 +57,16 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp("right") || Input.GetKeyUp("d"))
         {
             animator.SetBool("IsRunningRight", false);
+        }
+
+        if (animator.GetBool("IsRunningRight") || animator.GetBool("IsRunningLeft") ||
+            animator.GetBool("IsRunningUp") || animator.GetBool("IsRunningDown"))
+        {
+            animator.SetBool("IsIdle", false);
+        }
+        else
+        {
+            animator.SetBool("IsIdle", true);
         }
     }
 }
