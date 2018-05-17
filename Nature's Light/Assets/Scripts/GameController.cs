@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
@@ -13,6 +14,7 @@ public class GameController : MonoBehaviour {
     public GameObject blocks;
     public GameObject blockTemplate;
     public GameObject player;
+    public int maxFireflies;
 
     // Use this for initialization
     void Start () {
@@ -39,6 +41,11 @@ public class GameController : MonoBehaviour {
     {
         score += newScoreValue;
         UpdateScore();
+
+        if (score >= maxFireflies)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     void UpdateScore()

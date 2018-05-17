@@ -19932,6 +19932,7 @@ MonoBehaviour:
   blockTemplate: {fileID: 1161472885587870, guid: 7402daf6e8b7a6246b2bf141e9997171,
     type: 2}
   player: {fileID: 806572075}
+  maxFireflies: 1
 --- !u!4 &1601856531
 Transform:
   m_ObjectHideFlags: 0
