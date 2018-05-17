@@ -32,6 +32,11 @@ public class OutroGameManager : MonoBehaviour {
         }
         if (frame == 2)
         {
+            panel3.SetActive(true);
+            panel2.SetActive(false);
+        }
+        if (frame == 3)
+        {
             SceneManager.LoadScene(0);
         }
         frame++;
