@@ -19,9 +19,9 @@ public class GameController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         score = 0;
-        LLGateText.GetComponent<TextMesh>().text = "x" + (7 - score);
-        LRGateText.GetComponent<TextMesh>().text = "x" + (22 - score);
-        URGateText.GetComponent<TextMesh>().text = "x" + (13 - score);
+        LLGateText.GetComponent<TextMesh>().text = "x" + (3 - score);
+        LRGateText.GetComponent<TextMesh>().text = "x" + (9 - score);
+        URGateText.GetComponent<TextMesh>().text = "x" + (6 - score);
     }
 	
 	// Update is called once per frame
@@ -51,9 +51,9 @@ public class GameController : MonoBehaviour {
     void UpdateScore()
     {
         scoreText.text = "x " + score;
-        LLGateText.GetComponent<TextMesh>().text = "x" + (7 - score);
-        LRGateText.GetComponent<TextMesh>().text = "x" + (22 - score);
-        URGateText.GetComponent<TextMesh>().text = "x" + (13 - score);
+        LLGateText.GetComponent<TextMesh>().text = "x" + (3 - score);
+        LRGateText.GetComponent<TextMesh>().text = "x" + (9 - score);
+        URGateText.GetComponent<TextMesh>().text = "x" + (6 - score);
     }
 
     public int getScore()
